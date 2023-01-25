@@ -11,6 +11,9 @@ esteja correto. Implemente uma solução com TAD Pilha Estática e outra Dinâmi
 
 bool checkValidity(struct Stack* stack, char a){
     char value = popStack(stack);
+    if(length(stack->list) ==0){
+        return false;
+    }
     switch(a){
         case ')':
             return value == '(';
@@ -45,6 +48,10 @@ int main(){
         index++;
         temp = str[index];
     }while(temp != '\0');
-    printf("A string está formatada corretamente :)\n");
+    if(length(stack->list) == 0){
+    	printf("A string está formatada corretamente :)\n");
+	}else{
+		printf("A string não está formatada corretamente :(\n");
+	}
     return 0;
 }

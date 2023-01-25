@@ -189,7 +189,7 @@ char deleteValue(struct List* list, int key){
 	}
 };
 
-int findValue(struct List* list, int key){
+char findValue(struct List* list, int key){
 	return findNode(list, key)->data;
 };
 
