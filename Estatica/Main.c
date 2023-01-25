@@ -10,10 +10,10 @@ esteja correto. Implemente uma solução com TAD Pilha Estática e outra Dinâmi
 
 
 bool checkValidity(struct Stack* stack, char a){
-    char value = popStack(stack);
 	if(length(stack->list) ==0){
         return false;
     }
+    char value = popStack(stack);
     switch(a){
         case ')':
             return value == '(';
@@ -38,7 +38,9 @@ int main(){
             case '{':
                 pushStack(stack, temp);
             break;
-            default:
+            case ')':
+            case ']':
+            case '}':
                 bool result = checkValidity(stack, temp);
                 if(!result){
                     printf("A string não está formatada corretamente :(\n");
